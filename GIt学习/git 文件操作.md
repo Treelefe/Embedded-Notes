@@ -8,7 +8,7 @@ git diff 有一下使用场景：
 - 查看文件在两个特定版本之间的差异。
 - 查看文件在两个分支之间的差异。
 
-![![!\[Alt text\](29a3533d1bfecf552c0b596100f5efb.jpg)](<git diff.jpg>)](<../Images/git diff.jpg>)
+![![![Alt text](29a3533d1bfecf552c0b596100f5efb.jpg)](<git diff.jpg>)](<../Images/git diff.jpg>)
 &emsp;
 
 ### 1. 查看工作区和暂存区的文件差异：
@@ -66,3 +66,31 @@ git diff 版本号1 版本号2 文件名
 ```dotnetcli
 git diff 分支名1 分支名2
 ```
+
+&emsp;
+
+# 删除文件
+
+假如仓库中有一个文件 file1.txt，现在我想删除仓库中的这个文件
+
+### 1. 从工作区删除：
+
+```c
+//1.删除工作区的file1.txt文件
+rm file1.txt
+//2.添加修改到暂存区
+git add file1.txt
+//3.提交到本地仓库
+git commit -m "delete file1.txt"
+```
+
+可以看出，这样的方式去删除仓库中的一个文件还是比较麻烦的，因为需要先删除工作区，然后再添加到暂存区，最后提交到本地仓库。
+
+### 2.使用 git rm 命令：
+
+```c
+git rm file1.txt
+```
+
+同时也会删除工作区中的 file1.txt 文件。
+![![Alt text](image.png)](../Images/image16.png)
